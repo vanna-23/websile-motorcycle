@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+.nav-top {
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .373);
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.menu-top span i {
+    display: none
+}
+
+.p-top ul {
+    font-size: 20px;
+    margin-right: 200px;
+    display: flex;
+    list-style: none;
+    gap: 32px
+}
+
+.p-top ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder
+}
+
+.p-top-a a {
+    background-color: #000;
+    color: #000;
+    align-items: flex-end;
+    list-style: none
+}
+
+.homepage-top {
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(to right, rgb(34, 31, 54) 43%);
+    display: flex
+}
+
+.homepage-image {
+    width: 40%;
+    height: 90vh;
+    background: radial-gradient(rgb(19, 16, 38) 1px, transparent 10px);
+    background-color: rgba(0, 0, 0, .685);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center
+}
+
+.homepage-image img {
+    opacity: inherit;
+    margin-left: 180px
+}
+
+.home-sentance {
+    width: 50%;
+    height: 90vh;
+    color: #fff;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.home-sentance span {
+    font-size: 56px
+}
+
+.unleash {
+    width: 20%;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    padding: 15px 50px;
+    background: #fff;
+    color: #111;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer
+}
+
+.unleash::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-top: 45px solid #fff;
+    border-right: 20px solid rgba(0, 0, 0, 0);
+    z-index: 1
+}
+
+.unleash::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -23px;
+    width: 0;
+    height: 0;
+    border-top: 45px solid #000;
+    border-right: 23px solid rgba(0, 0, 0, 0);
+    z-index: 0
+}
+
+.all-contant {
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to right, rgb(34, 31, 54) 43%);
+    color: #fff
+}
+
+.contact-pag {
+    width: 40%;
+    height: 30vh;
+    background: radial-gradient(rgb(19, 16, 38) 1px, transparent 10px);
+    background-color: rgba(0, 0, 0, .685);
+    background-size: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end
+}
+
+.pag-contact,
+.home-contact {
+    font-size: 24px;
+    margin-right: 100px
+}
+
+.pag-contact {
+    font-size: 32px;
+    font-weight: bolder
+}
+
+.maps {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-evenly
+}
+
+.form-contact {
+    border: 1px solid #000;
+    border-radius: 24px;
+    padding: 40px;
+    gap: 20px
+}
+
+.form-contact input,
+.form-contact button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex
+}
+
+.footer {
+    margin-top: 32px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    justify-content: center
+}
+
+.contact-one,
+.contact-two,
+.contact-tree,
+.contact-four {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.contact-one {
+    text-align: justify
+}
+
+.contact-one-img {
+    width: 100px;
+    height: 100px
+}
+
+.contact-two {
+    display: flex;
+    align-items: center;
+    text-align: start
+}
+
+.contact-two h4 {
+    margin-bottom: 16px
+}
+
+.contact-two a {
+    text-decoration: none;
+    color: #fff
+}
+
+.contact-tree {
+    display: flex;
+    align-items: start;
+    text-align: start
+}
+
+.contact-tree h4 {
+    margin-bottom: 16px
+}
+
+.contact-tree a {
+    text-decoration: none;
+    color: #fff
+}
+
+.contact-four {
+    display: flex;
+    align-items: start;
+    text-align: start
+}
+
+.contact-four h4 {
+    margin-bottom: 16px
+}
+
+.contact-company {
+    margin-top: 128px;
+    margin-bottom: 128px;
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.contact-company div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+.btn-sm {
+    padding: 12px 24px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 24px
+}
+
+.btn-md {
+    padding: 16px 32px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 32px
+}
+
+.btn-lg {
+    padding: 20px 40px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 40px
+}
+
+/*# sourceMappingURL=style.min.css.map */

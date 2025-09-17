@@ -1,0 +1,13 @@
+$btn-width: sm, md, lg;
+$default-padding: 12px;
+
+@each $width in $btn-width {
+    .btn-#{$width} {
+        padding: $default-padding ($default-padding * 2);
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: $default-padding * 2;
+    }
+$default-padding: $default-padding + 4px;
+}

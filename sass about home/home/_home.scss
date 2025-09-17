@@ -1,0 +1,109 @@
+// -----------------top-----------------
+.nav-top {
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.373);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-top span i {
+    display: none;
+}
+
+.p-top ul {
+    font-size: 20px;
+    margin-right: 200px;
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    li a{
+    text-decoration: none;
+    color: $color-white;
+    font-weight: bolder;
+}
+}
+
+.p-top-a a {
+    background-color: black;
+    color: black;
+    align-items: flex-end;
+    list-style: none;
+}
+// ------------------homepag--------------
+.homepage-top {
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(to right,rgba(34, 31, 54, 1) 43%);
+    display: flex;
+
+}
+
+.homepage-image {
+    width: 40%;
+    height: 90vh;
+    background: radial-gradient(rgba(19, 16, 38, 1) 1px, transparent 10px);
+    background-color: rgba(0, 0, 0, 0.685);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.homepage-image img {
+    opacity: inherit;
+    margin-left: 180px;
+}
+
+.home-sentance {
+    width: 50%;
+    height: 90vh;
+    color: white;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.home-sentance span{
+    font-size: 56px;
+}
+
+.unleash {
+    width: 20%;
+    margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      padding: 15px 50px;
+      background: #fff;
+      color: #111;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+    }
+ .unleash::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -20px;
+      width: 0;
+      height: 0;
+      border-top: 45px solid #fff;
+      border-right: 20px solid transparent;
+      z-index: 1;
+    }
+
+    /* black shadow behind the angle */
+    .unleash::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -23px;
+      width: 0;
+      height: 0;
+      border-top: 45px solid #000;
+      border-right: 23px solid transparent;
+      z-index: 0;
+    }
