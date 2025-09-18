@@ -29,32 +29,118 @@
     font-weight: bolder;
 
 }
-.maps {
+
+//  ------------------contact-middle----------------
+.middlle-contact {
     margin-top: $magin-top;
     display: flex;
-    justify-content: space-evenly;
-}
+    flex-direction: column;
+    align-items: center;
 
-.form-contact {
-    border: 1px solid black;
-    border-radius: 24px;
+    .maps {
+        margin-top: $magin-top;
+        display: flex;
+        gap: 80px;
+
+        .form-contact {
+            border: 1px solid black;
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                width: 300px;
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: flex;
+            }
+
+            button {
+                width: 50%;
+                margin-top: 20px;
+                padding: 10px 20px;
+                border-radius: 10px;
+
+            }
+        }
+    }
+}
+// --------------main----------------
+.contact-main{
     padding: 40px;
-    gap: 20px;
-}
-
-.form-contact input,
-.form-contact button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border-radius: 10px;
+    margin-top: $magin-top*4;
+    background-color: $bk-color-black;
+    color: $color-white;
     display: flex;
+    gap: 80px;
+    justify-content: center;
+    .contact-main-one{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i{
+            width: 80px;
+            height: 80px;
+            font-size: 32px;
+            margin-top: -90px;
+            background-color: $color-black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        h4{
+            margin-top: $magin-top/2;
+        }
+    }
+    .contact-main-two{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i{
+            width: 80px;
+            height: 80px;
+            font-size: 32px;
+            margin-top: -90px;
+            background-color: $color-black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        h4{
+            margin-top: $magin-top/2;
+        }
+    }
+    .contact-main-tree{
+        width: 200px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i{
+            width: 80px;
+            height: 80px;
+            font-size: 32px;
+            margin-top: -90px;
+            background-color: $color-black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        h4{
+            margin-top: $magin-top/2;
+        }
+    }
 }
-
 // -----------footer-------
 .footer {
-
-    margin-top: $magin-top;
-    background-color: $bk-color-black;
+    background-color: rgba(34, 31, 54, 1);
     color: $color-white;
     display: flex;
     gap: 10px;
@@ -66,27 +152,22 @@
 .contact-two,
 .contact-tree,
 .contact-four {
+    margin-top: $magin-top;
     width: 16%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .contact-one {
+    margin-top: -8px;
     text-align: justify;
-
 }
 
-.contact-one-img {
-    width: 100px;
-    height: 100px;
-}
+
 
 .contact-two {
     display: flex;
-    align-items: center
-    ;
+    align-items: center;
     text-align: start;
 
     h4 {
@@ -108,30 +189,18 @@
         margin-bottom: 16px;
     }
 
-    a {
-        text-decoration: none;
-        color: $color-white;
+    i {
+        display: flex;
+        gap: 10px;
     }
 }
+
 .contact-four {
     display: flex;
     align-items: start;
     text-align: start;
+
     h4 {
         margin-bottom: 16px;
-    }
-}
-.contact-company{
-    margin-top: $magin-top * 4;
-    margin-bottom: $magin-top * 4;
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    div{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
     }
 }
