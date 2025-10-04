@@ -29,6 +29,27 @@
     font-weight: bolder;
 
 }
+// Mobile Responsive Styles
+@media (max-width: 768px) {
+    .all-contant {
+        height: 35vh;
+        min-height: 200px;
+    }
+    
+    .contact-pag {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    .pag-contact {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    
+    .home-contact {
+        font-size: 16px;
+    }
+}
 
 //  ------------------contact-middle----------------
 .middlle-contact {
