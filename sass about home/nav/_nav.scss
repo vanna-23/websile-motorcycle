@@ -1,0 +1,570 @@
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Ensure navbar stays within viewport */
+@media screen and (max-width: 768px) {
+    html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
+/* Ultra-Modern Mobile Navigation */
+@media screen and (max-width: 768px) {
+    /* SIMPLE & CLEAN Navbar */
+    .nav-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(34, 31, 54, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 20px rgba(34, 31, 54, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-top::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.05), 
+            transparent);
+        animation: navShimmer 3s infinite;
+    }
+
+    .nav-top.scrolled {
+        padding: 12px 0;
+        background: linear-gradient(135deg, 
+            rgba(34, 31, 54, 0.98) 0%, 
+            rgba(19, 16, 38, 0.99) 50%, 
+            rgba(10, 8, 20, 1) 100%);
+        box-shadow: 
+            0 12px 48px rgba(34, 31, 54, 0.6),
+            0 4px 16px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        transform: translateY(0);
+    }
+
+    .logo-p-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Simple Logo Design */
+    .logo-top {
+        position: relative;
+        z-index: 1002;
+    }
+
+    .logo-top img {
+        width: 60px !important;
+        height: auto;
+        margin-left: 0 !important;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+    }
+
+    .logo-top:hover img {
+        transform: scale(1.05);
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Simple Hamburger Menu Button */
+    .menu-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50px !important;
+        height: 50px !important;
+        cursor: pointer !important;
+        z-index: 1002;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px;
+        transition: all 0.3s ease !important;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;
+    }
+
+    .menu-top:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        transform: scale(1.05) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-top:active {
+        transform: scale(0.98) !important;
+    }
+
+    .menu-top i {
+        font-size: 22px !important;
+        color: white !important;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    /* Animated Background Gradient */
+    .menu-top::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent
+        );
+        animation: menuRotate 4s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .menu-top:hover::before {
+        opacity: 1;
+    }
+
+    .menu-top:hover {
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.18) 0%, 
+            rgba(255, 255, 255, 0.12) 100%);
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 
+            0 8px 24px rgba(0, 0, 0, 0.3),
+            0 4px 12px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .menu-top:active {
+        transform: translateY(0) scale(0.98);
+    }
+
+    .menu-top span {
+        display: none;
+    }
+
+    /* Advanced Hamburger Lines with Morphing Animation */
+    .menu-top::after {
+        content: '';
+        position: absolute;
+        width: 26px;
+        height: 2.5px;
+        background: linear-gradient(90deg, #ffffff 0%, #e9ecef 100%);
+        box-shadow: 
+            0 -9px 0 0 #ffffff,
+            0 9px 0 0 #ffffff;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-radius: 3px;
+        z-index: 1;
+    }
+
+    /* Active State - Morphing to X */
+    .menu-top.active {
+        background: linear-gradient(135deg, 
+            rgba(255, 100, 100, 0.15) 0%, 
+            rgba(255, 150, 150, 0.1) 100%);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-top.active::after {
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 0 transparent;
+        background: linear-gradient(90deg, #ffffff 0%, #ffcccc 100%);
+        width: 28px;
+    }
+
+    /* Second line of X */
+    .menu-top.active::before {
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 2.5px;
+        background: linear-gradient(90deg, #ffffff 0%, #ffcccc 100%);
+        transform: rotate(-45deg);
+        border-radius: 3px;
+        left: 50%;
+        top: 50%;
+        margin-left: -14px;
+        margin-top: -1.25px;
+        z-index: 1;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Pulse animation when active */
+    .menu-top.active {
+        animation: menuPulse 0.6s ease-out;
+    }
+
+    /* Ultra-Premium Mobile Menu */
+    .p-top {
+        position: fixed;
+        top: 0;
+        left: -85%;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        background: linear-gradient(135deg, 
+            rgba(34, 31, 54, 0.98) 0%, 
+            rgba(19, 16, 38, 0.99) 40%, 
+            rgba(10, 8, 20, 1) 80%, 
+            rgba(5, 4, 12, 1) 100%);
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding-top: 100px;
+        z-index: 999;
+        box-shadow: 
+            8px 0 40px rgba(0, 0, 0, 0.4),
+            4px 0 20px rgba(34, 31, 54, 0.3),
+            inset -1px 0 0 rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* SIMPLE & CLEAN Mobile Menu */
+    .p-top {
+        display: block !important; /* Override display: none from main CSS */
+        position: fixed !important;
+        top: 0 !important;
+        left: -280px !important; /* Start hidden */
+        width: 280px !important;
+        height: 100vh !important;
+        background: rgba(34, 31, 54, 0.96) !important;
+        z-index: 9999 !important;
+        padding-top: 80px !important;
+        transition: all 0.3s ease !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* Show menu when active */
+    .p-top.active {
+        left: 0 !important;
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .p-top ul {
+        display: block !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .p-top ul li {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* SIMPLE & CLEAN Menu Items */
+    .p-top ul li a {
+        display: block !important;
+        color: #ffffff !important;
+        padding: 18px 25px !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+    }
+
+    .p-top ul li a:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        padding-left: 35px !important;
+        color: #ffffff !important;
+    }
+
+    .p-top ul li a:active {
+        background: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    /* Simple Menu Footer */
+    .p-top .menu-footer {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        text-align: center;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .p-top .menu-footer::before {
+        content: 'MOTORCYCLE';
+        display: block;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* Animated Background Patterns */
+    .p-top::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+            linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
+        pointer-events: none;
+        animation: menuBackgroundFloat 8s ease-in-out infinite;
+    }
+
+    .p-top::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, 
+            transparent 0%, 
+            rgba(255, 255, 255, 0.3) 20%, 
+            rgba(255, 255, 255, 0.1) 50%, 
+            rgba(255, 255, 255, 0.3) 80%, 
+            transparent 100%);
+        animation: menuEdgeGlow 3s ease-in-out infinite alternate;
+    }
+
+    .p-top.active {
+        left: 0;
+        box-shadow: 
+            12px 0 60px rgba(0, 0, 0, 0.6),
+            8px 0 30px rgba(34, 31, 54, 0.4),
+            4px 0 15px rgba(0, 0, 0, 0.3);
+        transform: translateX(0);
+    }
+
+    .p-top ul {
+        list-style: none;
+        padding: 30px 0 120px 0;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .p-top ul li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .p-top ul li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .p-top ul li:hover::before {
+        left: 100%;
+    }
+
+    /* Premium Menu Items */
+    .p-top ul li a {
+        display: flex;
+        align-items: center;
+        padding: 20px 35px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        z-index: 3;
+        margin: 2px 0;
+        border-radius: 0 25px 25px 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    /* Show menu items when menu is active */
+    .p-top.active ul li a {
+        animation: slideInLeft 0.7s ease forwards;
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        display: flex !important;
+        visibility: visible !important;
+    }
+
+    /* Hide menu items when menu is not active */
+    .p-top:not(.active) ul li a {
+        opacity: 0;
+        transform: translateX(-40px);
+        visibility: hidden;
+    }
+
+    /* Animated Left Border */
+    .p-top ul li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 0;
+        background: linear-gradient(135deg, 
+            #ffffff 0%, 
+            #e9ecef 50%, 
+            #ffffff 100%);
+        border-radius: 0 3px 3px 0;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .p-top ul li a:hover::before {
+        height: 70%;
+        width: 6px;
+        box-shadow: 
+            0 0 15px rgba(255, 255, 255, 0.5),
+            0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Animated Arrow with Glow */
+    .p-top ul li a::after {
+        content: '→';
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%) translateX(25px);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .p-top ul li a:hover::after {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+        animation: arrowPulse 1.5s ease-in-out infinite;
+    }
+
+    /* Background Gradient on Hover */
+    .p-top ul li a:hover {
+        background: linear-gradient(90deg, 
+            rgba(255, 255, 255, 0.15) 0%, 
+            rgba(255, 255, 255, 0.08) 50%, 
+            rgba(255, 255, 255, 0.15) 100%);
+        padding-left: 50px;
+        color: #ffffff;
+        text-shadow: 
+            0 2px 8px rgba(0, 0, 0, 0.3),
+            0 0 20px rgba(255, 255, 255, 0.2);
+        transform: translateX(0) scale(1.02);
+        box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Staggered Animation Delays */
+    .p-top.active ul li:nth-child(1) a { animation-delay: 0.1s; }
+    .p-top.active ul li:nth-child(2) a { animation-delay: 0.2s; }
+    .p-top.active ul li:nth-child(3) a { animation-delay: 0.3s; }
+    .p-top.active ul li:nth-child(4) a { animation-delay: 0.4s; }
+    .p-top.active ul li:nth-child(5) a { animation-delay: 0.5s; }
+
+    /* Force menu items to be visible when menu is active */
+    .p-top.active ul li {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .p-top.active ul li a {
+        color: #ffffff !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        text-decoration: none !important;
+    }
+
+    .p-top ul li a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        padding-left: 45px;
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transform: translateX(0) scale(1.02);
+    }
+
+    .p-top ul li a:active {
+        transform: translateX(0) scale(0.98);
+    }
+
+    .p-top ul li a:active {
+        transform: translateX(0) scale(0.98);
+    }
+
+    /* Menu Brand Footer */
+    .p-top .menu-footer {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        right: 40px;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .p-top .menu-footer::before {
+        content: 'MOTORCYCLE';
+        display: block;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .p-top .menu-footer::after {
+        content: 'Premium Experience';
+        display: block;
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}
