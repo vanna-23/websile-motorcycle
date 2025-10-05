@@ -283,6 +283,92 @@
         }
     }
 }
+// Responsive adjustments for contact-main (tablets & mobile)
+@media (max-width: 992px) {
+    .contact-main{
+        gap: 40px;
+        padding: 30px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .contact-main-one,
+        .contact-main-two,
+        .contact-main-tree {
+            width: 45%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .contact-main-one i,
+        .contact-main-two i,
+        .contact-main-tree i {
+            /* remove heavy negative offset on smaller screens */
+            margin-top: 0;
+            margin-bottom: $magin-top/2;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-main{
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 16px;
+        align-items: center;
+
+        .contact-main-one,
+        .contact-main-two,
+        .contact-main-tree {
+            width: 100%;
+            max-width: 520px;
+            padding: $magin-top $padding/2;
+            background: transparent;
+        }
+
+        .contact-main-one i,
+        .contact-main-two i,
+        .contact-main-tree i {
+            width: 64px;
+            height: 64px;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: $magin-top/2;
+            background-color: $color-black;
+        }
+
+        .contact-main-tree {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-main{
+        padding: 16px;
+        gap: 16px;
+
+        .contact-main-one i,
+        .contact-main-two i,
+        .contact-main-tree i {
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+        }
+
+        .contact-main-one h4,
+        .contact-main-two h4,
+        .contact-main-tree h4 {
+            font-size: 16px;
+        }
+
+        .contact-main-one p,
+        .contact-main-two p,
+        .contact-main-tree p {
+            font-size: 14px;
+        }
+    }
+}
 // -----------footer-------
 .footer {
     padding: 32px;

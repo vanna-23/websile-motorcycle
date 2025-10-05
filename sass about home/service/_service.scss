@@ -706,4 +706,45 @@
         }
 
     }
+     // Mobile: stack content, reduce paddings and make images responsive
+    @media (max-width: 767px) {
+        padding: $padding*1.5;
+        padding-left: $padding*1.5;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+
+        .air-sentance {
+            width: 100%;
+
+            h1 {
+                font-size: 22px;
+                padding: $padding/2 0;
+            }
+
+            p {
+                font-size: 15px;
+                padding: 0 $padding/2;
+                line-height: 1.6;
+            }
+
+            div {
+                margin: $magin-top $padding/2 0;
+                margin-left: 0;
+                width: 80%;
+                max-width: 300px;
+                padding: $padding/1.25;
+            }
+        }
+
+        img {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            border-radius: $border-radius;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+            justify-self: center;
+        }
+    }
+
 }
