@@ -28,19 +28,84 @@
 
 // <!-- --------------------------------Our most important tool------------- -->
 .tool-service {
-    margin-left: 200px;
-    padding: $padding*4;
+    width: 100%;
+    margin: $magin-top*2 auto;
+    padding: $padding*2 $padding;
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: $magin-top;
+    text-align: center;
+
+    .tool-image {
+        width: 100%;
+        max-width: 360px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+    }
 
     .tool-sentences {
-        width: 40%;
+        width: 100%;
+        max-width: 520px;
+
+        h1 {
+            font-size: 24px;
+            line-height: 1.35;
+        }
 
         p {
-            font-size: 18px;
-            text-align: justify;
-            margin-top: 20px;
+            margin-top: $magin-top/2;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.75);
+        }
+    }
 
+    @media (min-width: 768px) {
+        padding: $padding*3 $padding*2;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        gap: $magin-top*1.5;
+
+        .tool-image {
+            max-width: 420px;
+        }
+
+        .tool-sentences {
+            max-width: 520px;
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding: $padding*4 $padding*3;
+        gap: $magin-top*2;
+
+        .tool-image {
+            max-width: 460px;
+        }
+
+        .tool-sentences {
+            max-width: 560px;
+
+            p {
+                font-size: 18px;
+            }
         }
     }
 }
@@ -79,9 +144,11 @@
         h1 {
             padding-bottom: 24px;
         }
-        p{
+
+        p {
             font-size: 18px;
         }
+
         div {
             margin-top: $magin-top/2;
             width: 20%;
@@ -102,7 +169,6 @@
         }
     }
 }
-
 // ---------------our well------------
 .our-well {
     text-align: center;
@@ -147,7 +213,8 @@
         h1 {
             padding: $padding;
         }
-        p{
+
+        p {
             font-size: 18px;
             padding: $padding;
         }
@@ -174,6 +241,7 @@
 
     }
 }
+
 // ---------------our well------------
 .our-well {
     text-align: center;
@@ -212,7 +280,8 @@
 
     .care-sentence {
         width: 40%;
-        p{
+
+        p {
             font-size: 18px;
             padding: $padding;
         }
@@ -239,6 +308,7 @@
 
     }
 }
+
 //  <!-- ----------------------air filter service----------- -->
 .air-service {
     padding: 40px;
@@ -252,7 +322,8 @@
         h1 {
             padding: $padding;
         }
-        p{
+
+        p {
             font-size: 18px;
             padding: $padding;
         }

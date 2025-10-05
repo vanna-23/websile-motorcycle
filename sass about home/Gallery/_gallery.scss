@@ -1,43 +1,88 @@
-//  <!-- -----------------------gallery-mian-------------- -->
+//  <!-- -----------------------gallery-main-------------- -->
 .gallery-main {
     margin-top: $magin-top;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: $padding*2 $padding;
+    gap: $magin-top;
 
-    h1 {
-        padding: $padding*2;
+    @media (min-width: 768px) {
+        padding: $padding*3 $padding*2;
+        gap: $magin-top*1.5;
     }
 
-    .gallery-main-imag {
-        display: flex;
-        gap: 32px;
+    h1 {
+        padding: 0;
+        font-size: 32px;
+        text-align: center;
+        color: $color-black;
 
-        .image {
-            margin-top: $magin-top;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            p {
-                width: 50%;
-                margin-top: -20px;
-                padding: $padding/2;
-                font-family: Arial, sans-serif;
-                font-weight: bolder;
-                text-align: center;
-                background-color: $bk-color-top;
-                color: $color-white;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-            }
-
-            &:hover {
-                transform: translateY(-10px) scale(1.03);
-                box-shadow: 0 8px 16px white;
-            }
+        @media (max-width: 767px) {
+            font-size: 26px;
         }
     }
 
+    .gallery-main-imag {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: $padding;
+
+        @media (min-width: 600px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: $padding*1.5;
+        }
+
+        @media (min-width: 1024px) {
+            gap: $padding*2;
+        }
+
+        .image {
+            background: $color-white;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            padding: $padding;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                border-radius: 12px;
+                object-fit: cover;
+                aspect-ratio: 16 / 10;
+            }
+
+            p {
+                width: 100%;
+                margin-top: $padding;
+                padding: $padding/2;
+                font-family: Arial, sans-serif;
+                font-weight: 700;
+                text-align: center;
+                background-color: $bk-color-top;
+                color: $color-white;
+                border-radius: 8px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                @media (min-width: 1024px) {
+                    width: 80%;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+            }
+
+            &:hover p {
+                transform: translateY(-4px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
 }
