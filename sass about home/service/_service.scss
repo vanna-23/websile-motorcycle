@@ -1,31 +1,85 @@
 // <!-- -------------------------service at Motorcycle---------------- -->
 .service-motorcycle-mian {
     width: 100%;
-    height: 70vh;
+    padding: $padding*2 $padding*1.25;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(19, 16, 38, 0.04) 0%, rgba(19, 16, 38, 0.12) 100%);
 
     .service-main {
-        margin-left: 200px;
+        width: 100%;
+        max-width: 960px;
         font-family: "Gill Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: $magin-top/2;
 
         H5 {
-            font-size: 72px;
-            margin-top: $magin-top*4;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
         }
 
         h3 {
-            margin-top: $magin-top/4;
-            font-size: 40px;
+            font-size: 22px;
+            line-height: 1.35;
+            margin: 0;
         }
 
         p {
-            width: 60%;
-            margin-top: $magin-top;
-            font-size: 20px;
-            line-height: 32px;
+            width: 100%;
+            max-width: 680px;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+    }
+
+    @media (min-width: 600px) {
+        padding: $padding*2.5 $padding*1.75;
+
+        .service-main {
+            H5 {
+                font-size: 42px;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        padding: $padding*4 $padding*3;
+
+        .service-main {
+            align-items: flex-start;
+            text-align: left;
+            gap: $magin-top;
+
+            H5 {
+                font-size: 64px;
+            }
+
+            h3 {
+                font-size: 40px;
+            }
+
+            p {
+                max-width: 60%;
+                font-size: 20px;
+                line-height: 32px;
+            }
         }
     }
 }
-
 // <!-- --------------------------------Our most important tool------------- -->
 .tool-service {
     width: 100%;
@@ -111,136 +165,371 @@
 }
 
 .our-services {
-    padding: 50px;
+    width: 100%;
+    padding: $padding*3 $padding*1.5;
     background-color: $bk-color-top;
     color: $color-white;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $magin-top;
+    border-radius: 28px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.22);
 
     .services-icon {
-        width: 30%;
-        flex-wrap: wrap;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: $magin-top/2;
+        justify-items: center;
 
         .icon-text {
-            width: 114px;
-            height: 114px;
+            width: 118px;
+            height: 118px;
             border-radius: $border-radius;
-            background-color: rgba(19, 16, 38, 1);
+            background: rgba(19, 16, 38, 0.95);
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            gap: 8px;
+            padding: $padding/2;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+            }
+
+            img {
+                width: 36px;
+                height: 36px;
+            }
+
+            p {
+                font-size: 13px;
+                line-height: 1.25;
+            }
         }
     }
 
     .our-services-text {
-        width: 40%;
-        margin-left: 20px;
+        text-align: center;
 
         h1 {
-            padding-bottom: 24px;
+            margin-bottom: $magin-top/2;
+            font-size: 28px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         div {
-            margin-top: $magin-top/2;
-            width: 20%;
-            padding: $padding;
+            margin: $magin-top/2 auto 0;
+            width: fit-content;
+            padding: $padding $padding*1.5;
             background: $color-white;
             color: $color-black;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            text-decoration: none;
             letter-spacing: 1px;
-            border: none;
-            text-align: center;
+            border-radius: 999px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
-                color: $color-white;
-                background-color: darken(rgba(166, 162, 162, 0.566), 10%);
+                transform: translateY(-4px);
+                box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+
+    @media (max-width: 520px) {
+        padding: $padding*2 $padding;
+        border-radius: 22px;
+
+        .services-icon {
+            grid-template-columns: repeat(2, minmax(110px, 1fr));
+            gap: $magin-top/2;
+
+            .icon-text {
+                width: 108px;
+                height: 108px;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .our-services-text {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
+        padding: $padding*3.5 $padding*2.5;
+        gap: $magin-top*1.3;
+
+        .services-icon {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .our-services-text {
+            text-align: left;
+
+            h1 {
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 17px;
+                max-width: 520px;
+            }
+
+            div {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding: $padding*4 $padding*3;
+        border-radius: 32px;
+        gap: $magin-top*1.6;
+
+        .services-icon {
+            gap: $magin-top*0.75;
+
+            .icon-text {
+                width: 130px;
+                height: 130px;
+                gap: 12px;
+            }
+        }
+
+        .our-services-text {
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 18px;
             }
         }
     }
 }
 // ---------------our well------------
 .our-well {
+    width: 100%;
+    padding: $padding*3 $padding*1.25;
     text-align: center;
-    padding: $padding;
 
     h1 {
-        padding: $padding*2;
+        margin-bottom: $magin-top;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $bk-color-top;
     }
 
     .our-well-imag {
-        display: flex;
-        justify-content: center;
-        gap: 32px;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: $magin-top;
+        justify-items: center;
 
-        p {
-            font-size: 18px;
-            border: 1px solid;
-            padding: $padding/2;
-            margin-top: $magin-top/2;
-            border-radius: $border-radius;
+        div {
+            width: 100%;
+            max-width: 240px;
+            padding: $padding;
+            border-radius: $border-radius*1.5;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            display: grid;
+            gap: $magin-top/2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
-                color: $color-black;
-                background-color: darken(rgba(166, 162, 162, 0.566), 10%);
+                transform: translateY(-6px);
+                box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: $border-radius;
+                object-fit: cover;
+            }
+
+            p {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+                border: 1px solid rgba(19, 16, 38, 0.15);
+                padding: $padding/2;
+                border-radius: 999px;
+                background: rgba(19, 16, 38, 0.05);
+
+                &:hover {
+                    color: $color-white;
+                    background-color: darken($bk-color-top, 5%);
+                }
+            }
+        }
+    }
+
+    @media (min-width: 520px) {
+        padding: $padding*3 $padding*2;
+
+        .our-well-imag {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 900px) {
+        padding: $padding*4 $padding*3;
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .our-well-imag {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: $magin-top*1.2;
+
+            div {
+                max-width: 260px;
             }
         }
     }
 }
-
-//  <!-- ------------------BMW dealers near you---------- -->
+//  <!-- ------------------BMW-dealers-near-you---------- -->
 .bwm-near-you {
-    background-color: $bk-color-top;
+    width: 100%;
+    padding: $padding*3 $padding*1.5;
+    background: radial-gradient(circle at top right, rgba(15, 12, 28, 0.85), $bk-color-top 60%);
     color: $color-white;
-    padding: 40px;
-    padding-left: 200px;
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: $magin-top;
 
     .bwm {
-        width: 32%;
+        width: 100%;
+        max-width: 540px;
+        text-align: center;
+        display: grid;
+        gap: $magin-top/2;
+    
 
         h1 {
-            padding: $padding;
+            margin: 0;
+            font-size: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         p {
-            font-size: 18px;
-            padding: $padding;
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         div {
-            margin-top: $magin-top;
-            margin-left: $padding;
-            width: 30%;
-            padding: $padding;
+            margin: $magin-top/2 auto 0;
+            width: fit-content;
+            padding: $padding $padding*1.5;
             background: $color-white;
             color: $color-black;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            text-decoration: none;
             letter-spacing: 1px;
-            border: none;
-            text-align: center;
+            border-radius: 999px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
-                color: $color-white;
-                background-color: darken(rgba(166, 162, 162, 0.566), 10%);
+                transform: translateY(-4px);
+                box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        max-width: 520px;
+        border-radius: $border-radius*1.5;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+        object-fit: cover;
+    }
+
+    @media (min-width: 768px) {
+        padding: $padding*3.5 $padding*2.5;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: $magin-top*1.4;
+
+        .bwm {
+            max-width: 420px;
+            text-align: left;
+
+            h1 {
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            div {
+                margin-left: 0;
             }
         }
 
+        img {
+            max-width: 460px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding: $padding*4 $padding*3;
+        gap: $magin-top*1.8;
+
+        .bwm {
+            max-width: 460px;
+
+            h1 {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        img {
+            max-width: 520px;
+        }
     }
 }
+
 
 // ---------------our well------------
 .our-well {
@@ -273,39 +562,107 @@
 
 //  <!-- ------------------care oil plan---------- -->
 .care-oil {
-    padding: 40px;
-    padding-left: 200px;
-    display: flex;
-    gap: 30px;
+    width: 100%;
+    padding: $padding*3 $padding*1.5;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $magin-top;
+    align-items: center;
+    background: linear-gradient(160deg, rgba(17, 83, 196, 0.12), rgba(20, 19, 46, 0.18));
+
+    img {
+        width: 100%;
+        max-width: 540px;
+        border-radius: $border-radius*1.5;
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+        justify-self: center;
+    }
 
     .care-sentence {
-        width: 40%;
+        width: 100%;
+        max-width: 560px;
+        text-align: center;
+        margin: 0 auto;
+        display: grid;
+        gap: $magin-top/2;
+
+        h1 {
+            font-size: 28px;
+            line-height: 1.3;
+        }
 
         p {
-            font-size: 18px;
-            padding: $padding;
+            font-size: 16px;
+            line-height: 1.7;
+            padding: 0;
         }
 
         div {
-            margin-top: $magin-top/4;
-            margin-left: $padding;
-            width: 30%;
-            padding: $padding;
-            background: blue;
+            margin: $magin-top/2 auto 0;
+            width: fit-content;
+            padding: $padding $padding*1.75;
+            background: $bk-color-top;
             color: $color-white;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            text-decoration: none;
             letter-spacing: 1px;
-            border: none;
-            text-align: center;
+            border-radius: 999px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
-                color: $color-black;
-                background-color: darken(rgba(166, 162, 162, 0.566), 10%);
+                transform: translateY(-4px);
+                box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
             }
         }
+    }
 
+    @media (min-width: 768px) {
+        padding: $padding*3.5 $padding*2.5;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: $magin-top*1.4;
+
+        img {
+            justify-self: end;
+            max-width: 460px;
+        }
+
+        .care-sentence {
+            text-align: left;
+            margin: 0;
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            div {
+                margin-left: 0;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding: $padding*4 $padding*3;
+        gap: $magin-top*1.6;
+
+        img {
+            max-width: 520px;
+        }
+
+        .care-sentence {
+            max-width: 580px;
+
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
     }
 }
 
