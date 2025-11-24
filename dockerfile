@@ -2,6 +2,6 @@
 FROM nginx:alpine
 
 # Copy your website files into Nginx default directory
-COPY . /user/share/nginx/html
+COPY . /usr/share/nginx/html
 
-EXPOSE 83
+EXPOSE 80
