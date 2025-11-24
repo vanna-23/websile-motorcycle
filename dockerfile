@@ -4,4 +4,4 @@ FROM nginx:alpine
 # Copy your website files into Nginx default directory
 COPY . /user/share/nginx/html
 
-EXPOSE 81
+EXPOSE 83
